@@ -656,63 +656,78 @@ header .search-bar-container #search-box {
 
 
 
-/* media queries */
-@media(max-width:1200px){
 
+ /* 🔹 Responsive Design Updates */
 
+/* Tablet Screens */
+@media(max-width:991px) {
     html {
         font-size: 55%;
     }
+
+    header {
+        padding: 1.5rem 2rem;
+    }
+
+    section {
+        padding: 2rem;
+    }
 }
 
- @media(max-width:991px){
-
-        header{
-            padding: 2rem;
-        }
-        
-        section{
-         padding: 2rem;
-        }
-    }
-   
-    
- @media(max-width:768px){
-        
-        #menu-bar{
-            display: initial;
-        }
-    
-
-        header .navbar{
-            padding: absolute;
-            top: 100%;
-            right: 0;
-            left: 0;
-            background: #333;
-            border-top: .1rem solid rgba(255,255,255,.2);
-            padding: 1rem 2rem;
-        }
-
-        header .navbar a{
-            display: flex;
-            border-radius: .5rem;
-            padding:1.5rem;
-            margin:1.5rem 0;
-            background: #222;
-        }
+/* Mobile Screens */
+@media(max-width:768px) {
+    #menu-bar {
+        display: inline-block;
     }
 
-    @media(max-width:450px){
-
-        html {
-            font-size: 50%;
-        }
-
-        .heading span {
-            font-size: 2.5rem;
-        }
-        .contact .row form .inputBox input{
-            width: 100%;
-        }
+    header .navbar {
+        position: absolute;
+        top: 100%;
+        right: -100%; /* Default hidden */
+        width: 100%;
+        background: #333;
+        border-top: .1rem solid rgba(255, 255, 255, .2);
+        transition: 0.3s ease-in-out;
+        text-align: center;
+        flex-direction: column;
     }
+
+    /* Show navbar when active */
+    header .navbar.active {
+        right: 0;
+    }
+
+    header .navbar a {
+        display: block;
+        margin: 1rem 0;
+        padding: 1.2rem;
+        background: #222;
+        border-radius: .5rem;
+        font-size: 2rem;
+    }
+}
+
+/* Extra Small Screens */
+@media(max-width:450px) {
+    html {
+        font-size: 50%;
+    }
+
+    .heading span {
+        font-size: 2.5rem;
+    }
+
+    .contact .row form .inputBox input {
+        width: 100%;
+    }
+
+    header .logo {
+        font-size: 2rem;
+    }
+
+    header .icons i {
+        font-size: 2rem;
+        margin-right: 1rem;
+    }
+}
+
