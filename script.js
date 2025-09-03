@@ -7,21 +7,25 @@ let menu = document.querySelector('#menu-bar');
 let navbar = document.querySelector('.navbar');
 let videoBtn = document.querySelectorAll('.vid-btn');
 
-  menu.onclick = () => {
-        menu.classList.toggle('fa-times'); // icon change karega (bars -> X)
-        navbar.classList.toggle('active'); // navbar show/hide karega
+    // Menu toggle
+    menu.onclick = () => {
+        menu.classList.toggle('fa-times');
+        navbar.classList.toggle('active');
     };
 
-    // Jab page scroll ho to menu band ho jaye
+    // Scroll karne par menu band ho jaye
     window.onscroll = () => {
         menu.classList.remove('fa-times');
         navbar.classList.remove('active');
     };
 
-    window.onscroll = () => {
-        searchBtn.classList.remove('fa-times');
-        searchBar.classList.remove('active');
-    };
+    // 🔹 Navbar link ya section click karne par sidebar band ho jaye
+    document.querySelectorAll('header .navbar a').forEach(link => {
+        link.addEventListener('click', () => {
+            menu.classList.remove('fa-times');
+            navbar.classList.remove('active');
+        });
+    });
 
 searchBtn.addEventListener('click', () => {
   searchBtn.classList.toggle('fa-times');
