@@ -731,3 +731,32 @@ header .search-bar-container #search-box {
     }
 }
 
+@media(max-width:768px) {
+    .login-form-container form {
+        width: 90%; /* mobile me full width */
+        padding: 1rem;
+    }
+
+    .login-form-container form h3 {
+        font-size: 2rem;
+    }
+
+    .login-form-container form .box {
+        font-size: 1.4rem;
+        padding: 0.8rem;
+    }
+
+    #form-close {
+        font-size: 2rem;
+        top: 1rem;
+        right: 1rem;
+    }
+
+    #form-close img {
+        width: 20px; 
+        height: 20px;
+    }
+}
+
+
+
